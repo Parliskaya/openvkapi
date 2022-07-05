@@ -3,21 +3,17 @@ from .openvkapi import *
 
 class users:
 
-    def __init__(self):
-        self.client = None
-        self.response = None
+    @staticmethod
+    def get(client, user_id):
+        response = http.get(f'https://openvk.su/method/Users.get?user_ids={user_id}&access_token={client}')
+        return json.loads(response.text)['response']
 
-    def get(self, client, user_id):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Users.get?user_ids={user_id}&access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def get_followers(client, user_id):
+        response = http.get(f'https://openvk.su/method/Users.getFollowers?user_id={user_id}&access_token={client}')
+        return json.loads(response.text)['response']
 
-    def get_followers(self, client, user_id):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Users.getFollowers?user_id={user_id}&access_token={self.client}')
-        return json.loads(self.response.text)['response']
-
-    def search(self, client, q):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Users.search?q={q}&access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def search(client, q):
+        response = http.get(f'https://openvk.su/method/Users.search?q={q}&access_token={client}')
+        return json.loads(response.text)['response']

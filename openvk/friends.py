@@ -3,26 +3,22 @@ from .openvkapi import *
 
 class friends:
 
-    def __init__(self):
-        self.client = None
-        self.response = None
+    @staticmethod
+    def get(client, user_id):
+        response = http.get(f'https://openvk.su/method/Friends.get?user_id={user_id}&access_token={client}')
+        return json.loads(response.text)['response']
 
-    def get(self, client, user_id):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Friends.get?user_id={user_id}&access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def add(client, user_id):
+        response = http.get(f'https://openvk.su/method/Friends.add?user_id={user_id}&access_token={client}')
+        return json.loads(response.text)['response']
 
-    def add(self, client, user_id):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Friends.add?user_id={user_id}&access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def remove(client, user_id):
+        response = http.get(f'https://openvk.su/method/Friends.remove?user_id={user_id}&access_token={client}')
+        return json.loads(response.text)['response']
 
-    def remove(self, client, user_id):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Friends.remove?user_id={user_id}&access_token={self.client}')
-        return json.loads(self.response.text)['response']
-
-    def get_list(self, client):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Friends.getLists?access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def get_list(client):
+        response = http.get(f'https://openvk.su/method/Friends.getLists?access_token={client}')
+        return json.loads(response.text)['response']

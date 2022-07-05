@@ -3,35 +3,31 @@ from .openvkapi import *
 
 class account:
 
-    def __init__(self):
-        self.client = None
-        self.response = None
+    @staticmethod
+    def get_profile(client):
+        response = http.get(f'https://openvk.su/method/Account.getProfileInfo?access_token={client}')
+        return json.loads(response.text)['response']
 
-    def get_profile(self, client):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Account.getProfileInfo?access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def get_info(client):
+        response = http.get(f'https://openvk.su/method/Account.getInfo?access_token={client}')
+        return json.loads(response.text)['response']
 
-    def get_info(self, client):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Account.getInfo?access_token={self.client}')
-        return json.loads(self.response.text)['response']
-
-    def set_online(self, client, status):
-        self.client = client
+    @staticmethod
+    def set_online(client, status):
         if status == 0:
-            return http.get(f'https://openvk.su/method/Account.setOffline?access_token={self.client}')
+            return http.get(f'https://openvk.su/method/Account.setOffline?access_token={client}')
         elif status == 1:
-            return http.get(f'https://openvk.su/method/Account.setOnline?access_token={self.client}')
+            return http.get(f'https://openvk.su/method/Account.setOnline?access_token={client}')
         else:
             pass
 
-    def get_permissions(self, client):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Account.getAppPermissions?access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def get_permissions(client):
+        response = http.get(f'https://openvk.su/method/Account.getAppPermissions?access_token={client}')
+        return json.loads(response.text)['response']
 
-    def get_counters(self, client):
-        self.client = client
-        self.response = http.get(f'https://openvk.su/method/Account.getCounters?access_token={self.client}')
-        return json.loads(self.response.text)['response']
+    @staticmethod
+    def get_counters(client):
+        response = http.get(f'https://openvk.su/method/Account.getCounters?access_token={client}')
+        return json.loads(response.text)['response']
