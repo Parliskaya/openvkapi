@@ -23,5 +23,5 @@ client = openvkapi.auth('youre@gmail.com', 'password')
 messages.send(client, user_id, 'Hello world!')
 ```
 
-![Documentation](http://openvkapi.readthedocs.io/)  
-![Author to OpenVK](https://openvk.su/parlis)
+[Documentation](http://openvkapi.readthedocs.io/)  
+[Author to OpenVK](https://openvk.su/parlis)
