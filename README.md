@@ -24,5 +24,5 @@ messages.send(client, user_id, 'Hello world!')
 ```
 
 ## Links
-[Documentation](https://github.com/Parliskaya/openvkapi/blob/main/docs/README.md)  
+[Documentation](https://github.com/Parliskaya/openvkapi/wiki/openvkapi-Documentation)  
 [Author to OpenVK](https://openvk.su/parlis)
