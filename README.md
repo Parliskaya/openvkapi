@@ -8,7 +8,7 @@ A modern, easy to use API wrapper for OpenVK written in Python.
 
 ## Installing
 
-```python
+```
 pip install openvk==0.0.8
 ```
 
