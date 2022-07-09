@@ -20,7 +20,7 @@ from openvk import messages
 
 
 client = openvkapi.auth('youre@gmail.com', 'password')
-messages.send(client['token'], user_id, 'Hello world!')
+messages.send(client, user_id, 'Hello world!')
 ```
 
 ## Links
