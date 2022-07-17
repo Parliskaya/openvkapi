@@ -4,16 +4,16 @@ from openvkapi import *
 class wall:
 
     @staticmethod
-    def get(client, user_id: int):
-        response = http.get(f'https://{client["domen"]}/method/Wall.get?owner_id={user_id}&access_token={client["token"]}')
+    def get(client, user_id: int, offset=0, count=100, extended=0):
+        response = http.get(f'https://{client["instance"]}/method/Wall.get?owner_id={user_id}&offset={offset}&count={count}&extended={extended}&access_token={client["token"]}')
         return json.loads(response.text)['response']
 
     @staticmethod
-    def get_post(client, post_id: int):
-        response = http.get(f'https://{client["domen"]}/method/Wall.getById?posts={post_id}&access_token={client["token"]}')
+    def get_post(client, post_id: int, fields='', extended=0):
+        response = http.get(f'https://{client["instance"]}/method/Wall.getById?posts={post_id}&fields={fields}&extended={extended}&access_token={client["token"]}')
         return json.loads(response.text)['response']
 
     @staticmethod
-    def post(client, user_id: int, message: str):
-        response = http.get(f'https://{client["domen"]}/method/Wall.post?message={message}&owner_id={user_id}&access_token={client["token"]}')
+    def post(client, user_id: int, message: str, from_group=0, signed=0):
+        response = http.get(f'https://{client["instance"]}/method/Wall.post?message={message}&owner_id={user_id}&from_group={from_group}&signed={signed}&access_token={client["token"]}')
         return json.loads(response.text)['response']

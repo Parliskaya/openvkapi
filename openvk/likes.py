@@ -4,16 +4,16 @@ from openvkapi import *
 class likes:
 
     @staticmethod
-    def add(client, type, owner_id, item_id):
-        response = http.get(f'https://{client["domen"]}/method/Likes.add?type={type}&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
+    def add(client, owner_id, item_id):
+        response = http.get(f'https://{client["instance"]}/method/Likes.add?type=post&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
         return json.loads(response.text)
 
     @staticmethod
-    def remove(client, type, owner_id, item_id):
-        response = http.get(f'https://{client["domen"]}/method/Likes.remove?type={type}&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
+    def remove(client, owner_id, item_id):
+        response = http.get(f'https://{client["instance"]}/method/Likes.remove?type=post&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
         return json.loads(response.text)
 
     @staticmethod
-    def is_liked(client, user_id, type, owner_id, item_id):
-        response = http.get(f'https://{client["domen"]}/method/Likes.remove?user_id={user_id}&type={type}&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
+    def is_liked(client, user_id, owner_id, item_id):
+        response = http.get(f'https://{client["instance"]}/method/Likes.remove?user_id={user_id}&type=post&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
         return json.loads(response.text)
