@@ -26,6 +26,6 @@ messages.send(client, user_id, 'Hello world!')
 
 ## Links
 [Documentation](https://github.com/Parliskaya/openvkapi/wiki/openvkapi-Documentation)  
-[Author to OpenVK](https://openvk.su/ucinka)  
+[Author in OpenVK](https://openvk.su/ucinka)  
 [LeenzeryDev](https://github.com/leenzerydev)  
 [.NET version](https://github.com/LyStudios/OpenVkNetApi)  
