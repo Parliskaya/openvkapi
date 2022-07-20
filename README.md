@@ -9,7 +9,7 @@ A modern, easy to use API wrapper for OpenVK written in Python.
 ## Installing
 
 ```
-pip install openvk==1.1
+pip install openvk==1.2
 ```
 
 
