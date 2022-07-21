@@ -9,8 +9,8 @@ class likes:
         return json.loads(response.text)
 
     @staticmethod
-    def remove(client, owner_id, item_id):
-        response = http.get(f'https://{client["instance"]}/method/Likes.remove?type=post&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
+    def delete(client, owner_id, item_id):
+        response = http.get(f'https://{client["instance"]}/method/Likes.delete?type=post&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}')
         return json.loads(response.text)
 
     @staticmethod
