@@ -17,3 +17,8 @@ class ovk:
     def chicken_wings(client):
         response = http.get(f'https://{client["instance"]}/method/Ovk.chickenWings?access_token={client["token"]}')
         return json.loads(response.text)
+
+    @staticmethod
+    def about_instance(client):
+        response = http.get(f'https://{client["instance"]}/method/Ovk.aboutInstance?access_token={client["token"]}')
+        return json.loads(response.text)
