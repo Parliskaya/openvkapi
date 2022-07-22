@@ -26,6 +26,7 @@ messages.send(client, user_id, 'Hello world!')
 
 ## Links
 [Documentation](https://github.com/Parliskaya/openvkapi/wiki/openvkapi-Documentation)  
+[Telegram chat](https://t.me/ovkapi)   
 [Author in OpenVK](https://openvk.su/ucinka)  
 [LeenzeryDev](https://github.com/leenzerydev)  
 [.NET version](https://github.com/LyStudios/OpenVkNetApi)  
