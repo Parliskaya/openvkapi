@@ -18,8 +18,9 @@ pip install openvk==1.6
 from openvk import openvkapi
 from openvk import messages
 
-
-client = openvkapi.auth('youre@gmail.com', 'password')
+# Also, you can log in with token
+# client = openvkapi.auth(token='your_token')
+client = openvkapi.auth('your@mail.address', 'password')
 user_id = 1010
 messages.send(client, user_id, 'Hello world!')
 ```
@@ -29,5 +30,5 @@ messages.send(client, user_id, 'Hello world!')
 [Telegram chat](https://t.me/ovkapi)   
 [Author in OpenVK](https://openvk.su/ucinka)  
 [LeenzeryDev](https://github.com/leenzerydev)   
-[LuneeDev](https://github.com/luneedev)   
+[luneedev](https://github.com/luneedev)   
 [.NET version](https://github.com/LyStudios/OpenVkNetApi)  
