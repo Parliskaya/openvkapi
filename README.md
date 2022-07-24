@@ -9,7 +9,7 @@ A modern, easy to use API wrapper for OpenVK written in Python.
 ## Installing
 
 ```
-pip install openvk==1.4
+pip install openvk==1.5
 ```
 
 
@@ -28,5 +28,6 @@ messages.send(client, user_id, 'Hello world!')
 [Documentation](https://github.com/Parliskaya/openvkapi/wiki/openvkapi-Documentation)  
 [Telegram chat](https://t.me/ovkapi)   
 [Author in OpenVK](https://openvk.su/ucinka)  
-[LeenzeryDev](https://github.com/leenzerydev)  
+[LeenzeryDev](https://github.com/leenzerydev)   
+[LuneeDev](https://github.com/luneedev)   
 [.NET version](https://github.com/LyStudios/OpenVkNetApi)  
