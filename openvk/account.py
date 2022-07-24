@@ -5,13 +5,11 @@ class account:
 
     @staticmethod
     def get_profile(client):
-        response = http.get(f'https://{client["instance"]}/method/Account.getProfileInfo?access_token={client["token"]}')
-        return json.loads(response.text)
+        return http.get(f'https://{client["instance"]}/method/Account.getProfileInfo?access_token={client["token"]}').json()
 
     @staticmethod
     def get_info(client):
-        response = http.get(f'https://{client["instance"]}/method/Account.getInfo?access_token={client["token"]}')
-        return json.loads(response.text)
+        return http.get(f'https://{client["instance"]}/method/Account.getInfo?access_token={client["token"]}').json()
 
     @staticmethod
     def set_online(client, status):
@@ -24,10 +22,8 @@ class account:
 
     @staticmethod
     def get_permissions(client):
-        response = http.get(f'https://{client["instance"]}/method/Account.getAppPermissions?access_token={client["token"]}')
-        return json.loads(response.text)
+        return http.get(f'https://{client["instance"]}/method/Account.getAppPermissions?access_token={client["token"]}').json()
 
     @staticmethod
     def get_counters(client):
-        response = http.get(f'https://{client["instance"]}/method/Account.getCounters?access_token={client["token"]}')
-        return json.loads(response.text)
+        return http.get(f'https://{client["instance"]}/method/Account.getCounters?access_token={client["token"]}').json()

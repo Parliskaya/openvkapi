@@ -8,9 +8,9 @@ class openvkapi:
 
     @staticmethod
     def auth(login: str, password: str, instance='openvk.su', code=0):
-        response = http.get(f'https://{instance}/token?username={login}&password={password}&code={code}&grant_type=password')
-        token = str(json.loads(response.text)['access_token'])
-        user_id = int(json.loads(response.text)['user_id'])
+        response = http.get(f'https://{instance}/token?username={login}&password={password}&code={code}&grant_type=password').json()
+        token = str(response['access_token'])
+        user_id = int(response['user_id'])
         response = {
             'instance': instance,
             'token': token,
