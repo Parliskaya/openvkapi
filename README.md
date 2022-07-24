@@ -21,6 +21,7 @@ from openvk import messages
 # Also, you can log in with token
 # client = openvkapi.auth(token='your_token')
 client = openvkapi.auth('your@mail.address', 'password')
+
 user_id = 1010
 messages.send(client, user_id, 'Hello world!')
 ```
