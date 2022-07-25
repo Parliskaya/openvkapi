@@ -1,10 +1,7 @@
 import requests as http
-import json
 
 
 class openvkapi:
-
-    """Авторизация пользователя"""
 
     @staticmethod
     def auth(login='', password='', code=0, instance='openvk.su', token=''):

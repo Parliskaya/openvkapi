@@ -13,4 +13,4 @@ class likes:
 
     @staticmethod
     def is_liked(client, user_id, owner_id, item_id):
-        return http.get(f'https://{client["instance"]}/method/Likes.remove?user_id={user_id}&type=post&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}').json()
+        return http.get(f'https://{client["instance"]}/method/Likes.isLiked?user_id={user_id}&type=post&owner_id={owner_id}&item_id={item_id}&access_token={client["token"]}').json()
