@@ -5,7 +5,7 @@ class messages:
 
     @staticmethod
     def send(client, user_id, message, peer_id=-1, domain='', chat_id=-1, user_ids='', sticker_id=-1):
-        return http.get(f'https://{client["instance"]}/method/Messages.send?user_id={user_id}&peer_id={peer_id}&message={message}%domain={domain}%chat_id={chat_id}&user_ids={user_ids}&sticker_id={sticker_id}&access_token={client["token"]}').json()
+        return http.get(f'https://{client["instance"]}/method/Messages.send?user_id={user_id}&peer_id={peer_id}&message={message}&domain={domain}&chat_id={chat_id}&user_ids={user_ids}&sticker_id={sticker_id}&access_token={client["token"]}').json()
 
     @staticmethod
     def delete(client, message_id):
